@@ -1,0 +1,36 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.42.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 5d90f4793169c467e69b9a20f2ae5d7bcdb1fc05 Changes
+SHA1 28022aecc59a98f40d5e8d10ba282426ead57b6f MANIFEST
+SHA1 f82dca20416dda09ded6f1fb75e68c53e3a0af6d META.yml
+SHA1 e8e9c6f90906530a21f88fd45b65bae3e9066c5f Makefile.PL
+SHA1 04f25a1f4615817794be3b3b0f949758753ce6ef README
+SHA1 ec66715db15fdf10e98b32ad9aef773b109b84fb lib/Test/MockObject.pm
+SHA1 36ede9e3b81c61206e82feaad2adb46284867e21 lib/Test/MockObject/Extends.pm
+SHA1 c043e04e5ce1dceeafdf7a229a53dc7208b66f01 t/0-signature.t
+SHA1 dca3c708b1b96ea94df7b7f7d9bd8bcfc5e33fd8 t/base.t
+SHA1 c4a3f7ce1a343ff8c8cf47d0c7b4c6ba3632e23d t/bugs.t
+SHA1 bed48009131d7366a46e7ed68df330822c3e9191 t/extends.t
+SHA1 6f12f58cc5307c3b05baafeb443604d7d4d75e58 t/ignore.t
+SHA1 a5031044a71a3bffc9738710abef430f263497e8 t/isa.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.2.6 (GNU/Linux)
+
+iD8DBQFBv90IBd8Wn1wI6cQRApYtAKCUMCRZVf8q6kriXhQgBLZqcX7gvQCfW+03
+zQI3bXUrWQUguP6favkqIHM=
+=R1+W
+-----END PGP SIGNATURE-----

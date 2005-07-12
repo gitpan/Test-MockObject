@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.42.
+signed via the Module::Signature module, version 0.44.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,23 +14,26 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 5d90f4793169c467e69b9a20f2ae5d7bcdb1fc05 Changes
-SHA1 28022aecc59a98f40d5e8d10ba282426ead57b6f MANIFEST
-SHA1 f82dca20416dda09ded6f1fb75e68c53e3a0af6d META.yml
-SHA1 e8e9c6f90906530a21f88fd45b65bae3e9066c5f Makefile.PL
-SHA1 04f25a1f4615817794be3b3b0f949758753ce6ef README
-SHA1 ec66715db15fdf10e98b32ad9aef773b109b84fb lib/Test/MockObject.pm
-SHA1 36ede9e3b81c61206e82feaad2adb46284867e21 lib/Test/MockObject/Extends.pm
+SHA1 49e684b0f10b69c0b062155d1d2d3fdb408f23c7 Build.PL
+SHA1 7ea3cf124f4e98fe8a513a5b236aeb1385d0b140 Changes
+SHA1 e15bda937fa4bf2a70dd2ff22c71cb607a16ffd0 MANIFEST
+SHA1 718fe5d15184202036df7b9a11e6d1105d145ade META.yml
+SHA1 5e78b7fbb51acdc9c26cadcb6f7c36bf04dc10e7 Makefile.PL
+SHA1 effc382cc186d94e14da1ec7d2805d26ba14bef4 README
+SHA1 d5b9535c5ac754db7e7d24e3ce7f5a1c861d08cb lib/Test/MockObject.pm
+SHA1 19ffa1f7a71a7f4f9cd066534235e7f131eb0a23 lib/Test/MockObject/Extends.pm
 SHA1 c043e04e5ce1dceeafdf7a229a53dc7208b66f01 t/0-signature.t
-SHA1 dca3c708b1b96ea94df7b7f7d9bd8bcfc5e33fd8 t/base.t
-SHA1 c4a3f7ce1a343ff8c8cf47d0c7b4c6ba3632e23d t/bugs.t
-SHA1 bed48009131d7366a46e7ed68df330822c3e9191 t/extends.t
+SHA1 bf25881461bdef2e9748c9210fdce13f49ca6cb6 t/base.t
+SHA1 45ddaadf02b76167f093a802ee93642f781d5379 t/bugs.t
+SHA1 9694d3fadf20f82f4e0156deeaed26d6b143984f t/extends.t
 SHA1 6f12f58cc5307c3b05baafeb443604d7d4d75e58 t/ignore.t
 SHA1 a5031044a71a3bffc9738710abef430f263497e8 t/isa.t
+SHA1 6da39b48ce64b584e4c3274bff96fc76ff484820 t/pod-coverage.t
+SHA1 0190346d7072d458c8a10a45c19f86db641dcc48 t/pod.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.2.6 (GNU/Linux)
+Version: GnuPG v1.4.1 (GNU/Linux)
 
-iD8DBQFBv90IBd8Wn1wI6cQRApYtAKCUMCRZVf8q6kriXhQgBLZqcX7gvQCfW+03
-zQI3bXUrWQUguP6favkqIHM=
-=R1+W
+iD8DBQFC011EBd8Wn1wI6cQRAtj7AJwJHqTrjZUaH7ct1itGqksOd+NHnQCfSqOS
+fFJRfKplObyOwdd7hbczjP0=
+=WN+P
 -----END PGP SIGNATURE-----

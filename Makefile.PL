@@ -9,6 +9,9 @@ WriteMakefile
           'PREREQ_PM' => {
                            'Scalar::Util' => '',
                            'Test::Warn' => '',
+                           'Test::Exception' => '',
+                           'UNIVERSAL::isa' => '0.02',
+                           'UNIVERSAL::can' => '1.00',
                            'Test::Simple' => '0.47'
                          }
         )

@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.44.
+signed via the Module::Signature module, version 0.50.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,26 +14,26 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 26e74205b83a096eef3c70c00136f28c23ab2cb2 Build.PL
-SHA1 b2bfe09674607fe1f5675089ac9a91afb38530e6 Changes
+SHA1 7b58fdae8bc1a31a48d52d2ec1c085c19d11bd25 Build.PL
+SHA1 472860cbdcb874720287cd60c1e0db47b622814a Changes
 SHA1 e15bda937fa4bf2a70dd2ff22c71cb607a16ffd0 MANIFEST
-SHA1 4c05723b12c2ea3cf5cb6868b76a08c06c4a615f META.yml
-SHA1 32275c721044faa2a6eda278a610abe4de4e5f25 Makefile.PL
-SHA1 effc382cc186d94e14da1ec7d2805d26ba14bef4 README
-SHA1 6f1b0e01d2201168e1f329babda78c49e34474ca lib/Test/MockObject.pm
-SHA1 275cb98218068aacbb6b9106986ba21d652fc5c9 lib/Test/MockObject/Extends.pm
-SHA1 c043e04e5ce1dceeafdf7a229a53dc7208b66f01 t/0-signature.t
-SHA1 bf25881461bdef2e9748c9210fdce13f49ca6cb6 t/base.t
-SHA1 45ddaadf02b76167f093a802ee93642f781d5379 t/bugs.t
-SHA1 dec4795bdf22a04decb401c71b0b39c665dfa211 t/extends.t
-SHA1 6f12f58cc5307c3b05baafeb443604d7d4d75e58 t/ignore.t
-SHA1 a5031044a71a3bffc9738710abef430f263497e8 t/isa.t
+SHA1 95fb274766e55b695ee5e8a994ccff167d63d16e META.yml
+SHA1 2bc190ac7286de0072802987f9cb7f64a1103d33 Makefile.PL
+SHA1 5d81f21a42389265012a2c2af3b12ecf6599fb9d README
+SHA1 24e91c585c895c4ba03fb6b5da59d00ef8abd32c lib/Test/MockObject.pm
+SHA1 d089ef0a34d5543ab6732600a84b3f696a1060e6 lib/Test/MockObject/Extends.pm
+SHA1 77102c964b81e78925b435ec06d97103cba97bed t/0-signature.t
+SHA1 544c51657ef92230426f0cee75ab578f3b3ce359 t/base.t
+SHA1 b16d92a1674627097e1f8c43ddedd7091fa56fa7 t/bugs.t
+SHA1 0875700f2992574beb98395ba47603f480211c7f t/extends.t
+SHA1 908cc6bb87a8e924495ae59212448df42006fc44 t/ignore.t
+SHA1 ec80bf3497bf400b56904e617487d72cd7b8d864 t/isa.t
 SHA1 6da39b48ce64b584e4c3274bff96fc76ff484820 t/pod-coverage.t
 SHA1 0190346d7072d458c8a10a45c19f86db641dcc48 t/pod.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (GNU/Linux)
+Version: GnuPG v1.4.2 (GNU/Linux)
 
-iD8DBQFDD+LABd8Wn1wI6cQRAqw2AKCS5T9kTamXZuZpomanZ2B2/uKVEACfY9Xj
-pMgbW8W85Cf2kKcnWGNjSxM=
-=RkUY
+iD8DBQFDrRQNqX/z6NoU2UoRAlK7AJ9uAP/vmaAn1ctIISHfaS8gAeQ3MACeNReR
+DCc4OQMS1pfYT4KAVfGLHMk=
+=NYyP
 -----END PGP SIGNATURE-----

@@ -4,10 +4,12 @@ use strict;
 use warnings;
 
 use Test::MockObject;
+
+use Devel::Peek  'CvGV';
 use Scalar::Util 'blessed';
 
 use vars qw( $VERSION $AUTOLOAD );
-$VERSION = '1.01';
+$VERSION = '1.03';
 
 sub new
 {
@@ -16,14 +18,35 @@ sub new
 	return Test::MockObject->new() unless defined $fake_class;
 
 	my $parent_class = $class->get_class( $fake_class );
-	unless ($parent_class->can( 'new' ))
+	$class->check_class_loaded( $parent_class );
+	my $self         = blessed( $fake_class ) ? $fake_class : {};
+
+	bless $self, $class->gen_package( $parent_class );
+}
+
+sub check_class_loaded
+{
+	my ($self, $parent_class) = @_;
+
+	my $symtable = \%main::;
+	my $found    = 1;
+
+	for my $symbol ( split( '::', $parent_class ))
+	{
+		unless (exists $symtable->{ $symbol . '::' })
+		{
+			$found = 0;
+			last;
+		}
+
+		$symbol = $symtable->{ $symbol . '::' };
+	}
+
+	unless ($found)
 	{
 		(my $load_class  = $parent_class) =~ s/::/\//g;
 		require $load_class . '.pm';
 	}
-	my $self         = blessed( $fake_class ) ? $fake_class : {};
-
-	bless $self, $class->gen_package( $parent_class );
 }
 
 sub get_class
@@ -55,12 +78,14 @@ sub gen_package
 sub gen_isa
 {
 	my ($class, $parent)    = @_;
-	
+
 	sub
 	{
+		local *__ANON__    = 'isa';
 		my ($self, $class) = @_;
 		return 1 if $class eq $parent;
-		return $parent->isa( $class );
+		my $isa = $parent->can( 'isa' );
+		return $isa->( $self, $class );
 	};
 }
 
@@ -70,6 +95,7 @@ sub gen_can
 
 	sub
 	{
+		local *__ANON__     = 'can';
 		my ($self, $method) = @_;
 		my $parent_method   = $self->SUPER::can( $method );
 		return $parent_method if $parent_method;
@@ -98,10 +124,10 @@ sub gen_autoload
 		}
 		elsif (my $parent_al = $parent->can( 'AUTOLOAD' ))
 		{
-			my $parent_pack  = blessed( $parent ) || $parent;
+			my ($parent_pack) = CvGV( $parent_al ) =~ /\*(.*)::AUTOLOAD/;
 			{
 				no strict 'refs';
-				${ "${parent_pack}::AUTOLOAD" } = "${parent_pack}::${method}";
+				${ "${parent_pack}::AUTOLOAD" } = "${parent}::${method}";
 			}
 			unshift @_, $self;
 			goto &$parent_al;
@@ -121,13 +147,12 @@ sub mock
 		$self->log_call( $name, @_ );
 		$sub->( @_ );
 	};
-	
+
 	{
 		no strict 'refs';
 		no warnings 'redefine';
 		*{ ref( $self ) . '::' . $name } = $mock_sub;
 	}
-
 }
 
 sub unmock
@@ -152,10 +177,13 @@ Test::MockObject::Extends - mock part of an object or class
   use Some::Class;
   use Test::MockObject::Extends;
 
+  # create an object to mock
   my $object      = Some::Class->new();
-  my $mock_object = Test::MockObject::Extends->new( $object );
 
-  $mock_object->set_true( 'parent_method' );
+  # wrap that same object with a mocking wrapper
+  $object         = Test::MockObject::Extends->new( $object );
+
+  $object->set_true( 'parent_method' );
 
 =head1 DESCRIPTION
 
@@ -173,7 +201,8 @@ can.
 
 C<new()> takes one optional argument, the object or class to mock.  If you're
 mocking a method for an object that holds internal state, create an appropriate
-object, then pass it to this constructor.
+object, then pass it to this constructor.  B<NOTE:> this will modify the object
+in place.
 
 If you're mocking an object that does not need state, as in the cases where
 there's no internal data or you'll only be calling class methods, or where
@@ -209,6 +238,11 @@ mocking.
 To do its magic, this module uses several internal methods:
 
 =over 4
+
+=item * C<check_class_loaded( $parent_class )>
+
+This verifies that you have the mockee defined.  If not, it attempts to load
+the corresponding module for you.
 
 =item * C<gen_autoload( $extended )>
 
@@ -261,5 +295,5 @@ No known bugs.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2004 - 2005, chromatic.  All rights reserved.  You may use,
+Copyright (c) 2004 - 2006, chromatic.  All rights reserved.  You may use,
 modify, and distribute this module under the same terms as Perl 5.8.x.

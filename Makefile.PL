@@ -8,9 +8,8 @@ WriteMakefile
                            'Scalar::Util' => '',
                            'Test::Exception' => '',
                            'Test::Simple' => '0.47',
-                           'Test::Warn' => '',
-                           'UNIVERSAL::can' => '1.00',
-                           'UNIVERSAL::isa' => '0.02'
+                           'UNIVERSAL::can' => '1.11',
+                           'UNIVERSAL::isa' => '0.06'
                          },
           'INSTALLDIRS' => 'site',
           'PL_FILES' => {}

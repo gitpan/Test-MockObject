@@ -5,7 +5,7 @@ WriteMakefile
           'NAME' => 'Test::MockObject',
           'VERSION_FROM' => 'lib/Test/MockObject.pm',
           'PREREQ_PM' => {
-                           'Scalar::Util' => '',
+                           'Scalar::Util' => '1.1.4',
                            'Test::Exception' => '',
                            'Test::Simple' => '0.47',
                            'UNIVERSAL::can' => '1.11',

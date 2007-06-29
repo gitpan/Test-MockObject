@@ -2,17 +2,17 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
+          'PL_FILES' => {},
+          'INSTALLDIRS' => 'site',
           'NAME' => 'Test::MockObject',
+          'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/Test/MockObject.pm',
           'PREREQ_PM' => {
                            'Scalar::Util' => '1.1.4',
                            'Test::Exception' => '',
-                           'Test::Simple' => '0.47',
+                           'UNIVERSAL::isa' => '0.06',
                            'UNIVERSAL::can' => '1.11',
-                           'UNIVERSAL::isa' => '0.06'
-                         },
-          'INSTALLDIRS' => 'site',
-          'EXE_FILES' => [],
-          'PL_FILES' => {}
+                           'Test::Simple' => '0.47'
+                         }
         )
 ;

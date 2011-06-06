@@ -1,15 +1,22 @@
 package Test::MockObject::Extends;
+BEGIN {
+  $Test::MockObject::Extends::VERSION = '1.20110606';
+}
 
 use strict;
 use warnings;
 
 use Test::MockObject;
 
+sub import
+{
+    my $self = shift;
+    eval "use Test::MockObject";
+    Test::MockObject->import( @_ );
+}
+
 use Devel::Peek  'CvGV';
 use Scalar::Util 'blessed';
-
-use vars qw( $VERSION $AUTOLOAD );
-$VERSION = '1.09';
 
 sub new
 {
@@ -107,6 +114,8 @@ sub gen_autoload
 
     sub
     {
+        our $AUTOLOAD;
+
         my $method = substr( $AUTOLOAD, rindex( $AUTOLOAD, ':' ) +1 );
         return if $method eq 'DESTROY';
 
@@ -313,5 +322,5 @@ No known bugs.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2004 - 2008, chromatic.  All rights reserved.  You may use,
+Copyright (c) 2004 - 2011, chromatic.  All rights reserved.  You may use,
 modify, and distribute this module under the same terms as Perl 5.10

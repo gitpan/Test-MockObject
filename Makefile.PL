@@ -12,10 +12,11 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'Perl extension for emulating troublesome interfaces',
   'AUTHOR' => 'chromatic',
   'BUILD_REQUIRES' => {
-    'CGI' => '0',
-    'Test::Exception' => '0.31',
+    'Test::Exception' => '0',
     'Test::More' => '0.98',
-    'Test::Warn' => '0.23'
+    'Test::Warn' => '0.23',
+    'overload' => '0',
+    'vars' => '0'
   },
   'CONFIGURE_REQUIRES' => {
     'ExtUtils::MakeMaker' => '6.30'
@@ -25,10 +26,18 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Test::MockObject',
   'PREREQ_PM' => {
+    'CGI' => '0',
+    'Carp' => '0',
+    'Devel::Peek' => '0',
+    'Scalar::Util' => '0',
+    'Test::Builder' => '0',
+    'Test::Exception' => '0.31',
+    'Test::More' => '0.98',
+    'Test::Warn' => '0.23',
     'UNIVERSAL::can' => '1.16',
     'UNIVERSAL::isa' => '1.03'
   },
-  'VERSION' => '1.20110606',
+  'VERSION' => '1.20110612',
   'test' => {
     'TESTS' => 't/*.t'
   }

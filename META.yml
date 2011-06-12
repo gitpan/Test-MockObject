@@ -3,20 +3,29 @@ abstract: 'Perl extension for emulating troublesome interfaces'
 author:
   - chromatic
 build_requires:
-  CGI: 0
-  Test::Exception: 0.31
+  Test::Exception: 0
   Test::More: 0.98
   Test::Warn: 0.23
+  overload: 0
+  vars: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200006, CPAN::Meta::Converter version 2.110440'
+generated_by: 'Dist::Zilla version 4.200007, CPAN::Meta::Converter version 2.110930'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Test-MockObject
 requires:
+  CGI: 0
+  Carp: 0
+  Devel::Peek: 0
+  Scalar::Util: 0
+  Test::Builder: 0
+  Test::Exception: 0.31
+  Test::More: 0.98
+  Test::Warn: 0.23
   UNIVERSAL::can: 1.16
   UNIVERSAL::isa: 1.03
-version: 1.20110606
+version: 1.20110612

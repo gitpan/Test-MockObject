@@ -1,6 +1,6 @@
 package Test::MockObject::Extends;
 BEGIN {
-  $Test::MockObject::Extends::VERSION = '1.20110606';
+  $Test::MockObject::Extends::VERSION = '1.20110612';
 }
 
 use strict;
